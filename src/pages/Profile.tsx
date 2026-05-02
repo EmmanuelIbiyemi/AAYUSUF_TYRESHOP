@@ -75,16 +75,16 @@ export default function Profile() {
   };
 
   return (
-    <div className="min-h-screen bg-[#0f0f0f]">
+    <div className="min-h-screen bg-[#0f0f0f] dark:bg-white">
       {/* Top bar */}
-      <div className="fixed top-0 left-0 right-0 z-40 bg-[#111]/90 backdrop-blur-md border-b border-white/5 h-16 flex items-center px-4 gap-3">
-        <button onClick={() => navigate(-1)} className="p-2 rounded-lg text-gray-400 hover:text-white hover:bg-white/5 transition-colors">
+      <div className="dark:bg-white fixed top-0 left-0 right-0 z-40 bg-[#111]/90 backdrop-blur-md border-b border-white/5 h-16 flex items-center px-4 gap-3">
+        <button onClick={() => navigate(-1)} className="p-2 rounded-lg text-gray-400 hover:text-white dark:hover:text-black hover:bg-white/5 transition-colors">
           <ArrowLeft className="w-5 h-5" />
         </button>
-        <h1 className="text-white font-bold text-base">My Profile</h1>
+        <h1 className="text-white font-bold text-base dark:text-black">My Profile</h1>
       </div>
 
-      <div className="pt-16 max-w-2xl mx-auto px-4 py-8 space-y-6">
+      <div className="pt-16 max-w-2xl mx-auto px-4 py-8 space-y-6 dark:bg-white">
         {/* Avatar */}
         <div className="bg-[#1a1a1a] rounded-2xl p-6 border border-white/5 flex items-center gap-5">
           <div className="relative">

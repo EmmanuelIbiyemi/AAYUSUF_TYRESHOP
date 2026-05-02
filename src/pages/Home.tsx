@@ -28,7 +28,7 @@ export default function Home() {
       <CartDrawer />
       <FloatingCartButton />
 
-      <main className="pt-16">
+      <main className="pt-16 dark:bg-white">
         {/* Hero banner */}
         <div className="relative overflow-hidden bg-gradient-to-br from-[#1a0a0b] via-[#1a1a1a] to-[#0f0f0f] border-b border-white/5">
           <div className="absolute inset-0 bg-[url('https://images.pexels.com/photos/3874337/pexels-photo-3874337.jpeg?auto=compress&cs=tinysrgb&w=1200')] bg-cover bg-center opacity-10" />
@@ -47,7 +47,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="max-w-7xl mx-auto px-4 py-8">
+        <div className="max-w-7xl mx-auto px-4 py-8 dark:bg-white">
           {/* Search + Filters */}
           <div className="flex flex-col sm:flex-row gap-4 mb-8">
             <div className="relative flex-1 max-w-sm">
@@ -57,7 +57,7 @@ export default function Home() {
                 value={search}
                 onChange={e => setSearch(e.target.value)}
                 placeholder="Search by name, brand, or size..."
-                className="w-full bg-[#1a1a1a] border border-white/10 text-white placeholder-gray-500 rounded-xl pl-10 pr-4 py-2.5 text-sm focus:outline-none focus:border-[#e63946] transition-colors"
+                className="w-full bg-[#1a1a1a] border border-white/10 text-white placeholder-gray-500 rounded-xl pl-10 pr-4 py-2.5 text-sm focus:outline-none focus:border-[#e63946] transition-colors dark:bg-white dark:border-gray-300 dark:text-black dark:placeholder-gray-400"
               />
             </div>
 
@@ -68,8 +68,8 @@ export default function Home() {
                   onClick={() => setActiveCategory(cat)}
                   className={`flex-shrink-0 px-4 py-2 rounded-xl text-sm font-medium transition-all duration-200 ${
                     activeCategory === cat
-                      ? 'bg-[#e63946] text-white shadow-lg shadow-[#e63946]/20'
-                      : 'bg-[#1a1a1a] text-gray-400 hover:text-white border border-white/5 hover:border-white/15'
+                      ? 'bg-[#e63946] text-white shadow-lg shadow-[#e63946]/20 '
+                      : 'bg-[#1a1a1a] text-gray-400 hover:text-white border border-white/5 hover:border-white/15 dark:bg-white dark:hover:text-black dark:border-gray-300 dark:hover:border-gray-400'
                   }`}
                 >
                   {cat}

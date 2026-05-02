@@ -18,7 +18,7 @@ export default function TyreCard({ tyre }: TyreCardProps) {
   };
 
   return (
-    <div className="bg-[#1a1a1a] rounded-2xl overflow-hidden border border-white/5 hover:border-[#e63946]/30 transition-all duration-300 hover:shadow-xl hover:shadow-[#e63946]/5 group flex flex-col">
+    <div className="bg-[#1a1a1a] rounded-2xl overflow-hidden border border-white/5 hover:border-[#e63946]/30 transition-all duration-300 hover:shadow-xl hover:shadow-[#e63946]/5 group flex flex-col dark:bg-white">
       <div className="relative overflow-hidden h-48 bg-[#111]">
         <img
           src={tyre.image}

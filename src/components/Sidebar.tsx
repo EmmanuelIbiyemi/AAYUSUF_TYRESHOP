@@ -44,7 +44,7 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
 
       {/* Drawer */}
       <aside
-        className={`fixed left-0 top-0 bottom-0 z-50 w-72 bg-[#111] border-r border-white/5 flex flex-col transform transition-transform duration-300 ease-in-out ${isOpen ? 'translate-x-0' : '-translate-x-full'}`}
+        className={`fixed left-0 top-0 bottom-0 z-50 w-72 bg-[#111] border-r border-white/5 flex flex-col transform transition-transform duration-300 ease-in-out ${isOpen ? 'translate-x-0' : '-translate-x-full'} dark:bg-white`}
       >
         {/* Header */}
         <div className="flex items-center justify-between px-5 py-4 border-b border-white/5">
@@ -57,8 +57,8 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
               </svg>
             </div>
             <div>
-              <p className="text-white font-bold text-sm leading-none">AA Koko</p>
-              <p className="text-gray-500 text-xs">Tyre Shop</p>
+              <p className="text-white font-bold text-sm leading-none dark:text-black">AA Koko</p>
+              <p className="text-gray-500 text-xs dark:text-gray-600">Tyre Shop</p>
             </div>
           </div>
           <button onClick={onClose} className="p-1.5 rounded-lg text-gray-400 hover:text-white hover:bg-white/5 transition-colors">
@@ -73,8 +73,8 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
               {initials}
             </div>
             <div className="min-w-0">
-              <p className="text-white text-sm font-semibold truncate">{displayName}</p>
-              <p className="text-gray-500 text-xs truncate">{user?.email}</p>
+              <p className="text-white text-sm font-semibold truncate dark:text-black">{displayName}</p>
+              <p className="text-gray-500 text-xs truncate dark:text-gray-600">{user?.email}</p>
             </div>
           </div>
         </div>
@@ -89,7 +89,7 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
               className={`flex items-center gap-3 px-3 py-2.5 rounded-xl transition-colors text-sm font-medium ${
                 location.pathname === path
                   ? 'bg-[#e63946] text-white'
-                  : 'text-gray-400 hover:text-white hover:bg-white/5'
+                  : 'text-gray-400 hover:text-white hover:bg-white/5 dark:hover:text-black'
               }`}
             >
               <Icon className="w-4.5 h-4.5 w-[18px] h-[18px]" />
@@ -99,7 +99,7 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
 
           <button
             onClick={() => { onClose(); openCart(); }}
-            className="w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-gray-400 hover:text-white hover:bg-white/5 transition-colors text-sm font-medium"
+            className="w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-gray-400 hover:text-white dark:hover:text-black hover:bg-white/5 transition-colors text-sm font-medium"
           >
             <ShoppingCart className="w-[18px] h-[18px]" />
             Cart

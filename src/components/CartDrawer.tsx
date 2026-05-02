@@ -14,13 +14,13 @@ export default function CartDrawer() {
 
       {/* Drawer */}
       <aside
-        className={`fixed right-0 top-0 bottom-0 z-50 w-full max-w-sm bg-[#111] border-l border-white/5 flex flex-col transform transition-transform duration-300 ease-in-out ${isOpen ? 'translate-x-0' : 'translate-x-full'}`}
+        className={`fixed right-0 top-0 bottom-0 z-50 w-full max-w-sm bg-[#111] border-l border-white/5 flex flex-col transform transition-transform duration-300 ease-in-out ${isOpen ? 'translate-x-0' : 'translate-x-full'} dark:bg-white`}
       >
         {/* Header */}
         <div className="flex items-center justify-between px-5 py-4 border-b border-white/5">
           <div className="flex items-center gap-2">
             <ShoppingBag className="w-5 h-5 text-[#e63946]" />
-            <h2 className="text-white font-bold text-lg">Your Cart</h2>
+            <h2 className="text-white font-bold text-lg dark:text-black">Your Cart</h2>
             {items.length > 0 && (
               <span className="bg-[#e63946] text-white text-xs font-bold px-2 py-0.5 rounded-full">
                 {items.reduce((s, i) => s + i.quantity, 0)}
@@ -36,8 +36,8 @@ export default function CartDrawer() {
         <div className="flex-1 overflow-y-auto px-4 py-3 space-y-3">
           {items.length === 0 ? (
             <div className="flex flex-col items-center justify-center h-full text-center py-16">
-              <div className="w-16 h-16 rounded-full bg-[#1a1a1a] flex items-center justify-center mb-4">
-                <ShoppingBag className="w-8 h-8 text-gray-600" />
+              <div className="w-16 h-16 rounded-full bg-[#1a1a1a] flex items-center justify-center mb-4 dark:bg-gray-200">
+                <ShoppingBag className="w-8 h-8 text-gray-600 dark:text-black" />
               </div>
               <p className="text-gray-400 font-medium">Your cart is empty</p>
               <p className="text-gray-600 text-sm mt-1">Add some tyres to get started</p>
@@ -50,7 +50,7 @@ export default function CartDrawer() {
             </div>
           ) : (
             items.map(item => (
-              <div key={item.id} className="bg-[#1a1a1a] rounded-xl p-3 flex gap-3 border border-white/5">
+              <div key={item.id} className="bg-[#1a1a1a] rounded-xl p-3 flex gap-3 border border-white/5 dark:bg-gray-100">
                 <img
                   src={item.image}
                   alt={item.name}
@@ -60,7 +60,7 @@ export default function CartDrawer() {
                   <div className="flex justify-between items-start gap-2">
                     <div className="min-w-0">
                       <p className="text-gray-400 text-xs">{item.brand}</p>
-                      <p className="text-white text-sm font-semibold truncate">{item.name}</p>
+                      <p className="text-white text-sm font-semibold truncate dark:text-black">{item.name}</p>
                       <p className="text-gray-500 text-xs font-mono">{item.size}</p>
                     </div>
                     <button
@@ -101,7 +101,7 @@ export default function CartDrawer() {
           <div className="px-4 py-4 border-t border-white/5 space-y-3">
             <div className="flex justify-between items-center">
               <span className="text-gray-400 text-sm">Subtotal</span>
-              <span className="text-white font-bold text-lg">&#8358;{subtotal.toLocaleString()}</span>
+              <span className="text-white font-bold text-lg dark:text-black">&#8358;{subtotal.toLocaleString()}</span>
             </div>
             <button className="w-full flex items-center justify-center gap-2 bg-[#e63946] hover:bg-[#c1121f] text-white font-semibold py-3 rounded-xl transition-colors">
               Proceed to Checkout <ArrowRight className="w-4 h-4" />
