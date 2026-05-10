@@ -1,7 +1,5 @@
 import { Menu, ShoppingCart } from 'lucide-react';
 import { useCart } from '../context/CartContext';
-import {  } from 'tailwindcss'
-import { useState , useEffect} from 'react';
 import { useTheme } from '../context/Tooglecontext';
 
 interface NavbarProps {
