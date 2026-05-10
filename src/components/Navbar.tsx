@@ -2,6 +2,7 @@ import { Menu, ShoppingCart } from 'lucide-react';
 import { useCart } from '../context/CartContext';
 import {  } from 'tailwindcss'
 import { useState , useEffect} from 'react';
+import { useTheme } from '../context/Tooglecontext';
 
 interface NavbarProps {
   onMenuClick: () => void;
@@ -9,15 +10,17 @@ interface NavbarProps {
 
 export default function Navbar({ onMenuClick }: NavbarProps) {
   const { totalItems, openCart } = useCart();
-  const [dark, setDark] = useState(false);
-  useEffect(() => {
-    if (dark) {
-      document.documentElement.classList.add("dark");
-    } 
-    else{
-      document.documentElement.classList.remove("dark");
-    }
-  }, [dark])
+  // const [dark, setDark] = useState(false);
+  const { toggleTheme , dark} = useTheme();
+  // useEffect(() => {
+  //   if (dark) {
+  //     document.documentElement.classList.add("dark");
+  //   } 
+  //   else{
+  //     document.documentElement.classList.remove("dark");
+  //   } 
+  // }, [dark])
+
   return (
     <nav className="fixed top-0 left-0 right-0 z-40 bg-[#111]/90 backdrop-blur-md border-b border-white/5 h-16 dark:bg-white">
       <div className="max-w-7xl mx-auto px-4 h-full flex items-center justify-between">
@@ -44,7 +47,7 @@ export default function Navbar({ onMenuClick }: NavbarProps) {
         </div>
         <div className='flex items-center gap-3'>
           <button
-            onClick={() => setDark(!dark)}
+            onClick={toggleTheme}
             className="flex items-center justify-center w-12 h-12 rounded-full 
                       bg-gray-200 dark:bg-gray-800 transition-colors duration-300"
           >

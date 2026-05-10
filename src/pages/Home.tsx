@@ -81,7 +81,7 @@ export default function Home() {
           {/* Results count */}
           <div className="flex items-center justify-between mb-6">
             <p className="text-gray-400 text-sm">
-              Showing <span className="text-white font-semibold">{filtered.length}</span> {filtered.length === 1 ? 'tyre' : 'tyres'}
+              Showing <span className="text-white font-semibold dark:text-black">{filtered.length}</span> {filtered.length === 1 ? 'tyre' : 'tyres'}
               {activeCategory !== 'All' && <> in <span className="text-[#e63946]">{activeCategory}</span></>}
             </p>
           </div>

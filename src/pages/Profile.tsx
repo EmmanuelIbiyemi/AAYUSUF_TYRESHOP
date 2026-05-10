@@ -86,7 +86,7 @@ export default function Profile() {
 
       <div className="pt-16 max-w-2xl mx-auto px-4 py-8 space-y-6 dark:bg-white">
         {/* Avatar */}
-        <div className="bg-[#1a1a1a] rounded-2xl p-6 border border-white/5 flex items-center gap-5">
+        <div className="bg-[#1a1a1a] rounded-2xl p-6 border border-white/5 flex items-center gap-5 dark:bg-gray-400">
           <div className="relative">
             <div className="w-20 h-20 rounded-full bg-[#e63946] flex items-center justify-center text-white font-bold text-2xl">
               {initials}
@@ -96,15 +96,15 @@ export default function Profile() {
             </button>
           </div>
           <div>
-            <p className="text-white font-bold text-lg">{displayName}</p>
+            <p className="text-white font-bold text-lg dark:text-black">{displayName}</p>
             <p className="text-gray-400 text-sm">{user?.email}</p>
             <p className="text-gray-600 text-xs mt-1">Member since {new Date(user?.created_at || Date.now()).toLocaleDateString('en-GB', { month: 'long', year: 'numeric' })}</p>
           </div>
         </div>
 
         {/* Profile form */}
-        <div className="bg-[#1a1a1a] rounded-2xl p-6 border border-white/5">
-          <h2 className="text-white font-bold text-base mb-5">Personal Information</h2>
+        <div className="bg-[#1a1a1a] rounded-2xl p-6 border border-white/5 dark:bg-gray-400">
+          <h2 className="text-white font-bold text-base mb-5 dark:text-black">Personal Information</h2>
 
           {saveError && (
             <div className="bg-red-500/10 border border-red-500/30 text-red-400 text-sm px-4 py-3 rounded-lg mb-4">
@@ -126,7 +126,7 @@ export default function Profile() {
                   value={fullName}
                   onChange={e => setFullName(e.target.value)}
                   placeholder="John Doe"
-                  className="w-full bg-[#252525] border border-white/10 text-white placeholder-gray-500 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-[#e63946] transition-colors"
+                  className="w-full bg-[#252525] border border-white/10 text-white placeholder-gray-500 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-[#e63946] transition-colors dark:bg-gray-200"
                 />
               </div>
               <div>
@@ -135,7 +135,7 @@ export default function Profile() {
                   type="email"
                   value={user?.email || ''}
                   disabled
-                  className="w-full bg-[#1f1f1f] border border-white/5 text-gray-500 rounded-xl px-4 py-3 text-sm cursor-not-allowed"
+                  className="w-full bg-[#1f1f1f] border border-white/5 text-gray-500 rounded-xl px-4 py-3 text-sm cursor-not-allowed dark:bg-gray-200"
                 />
               </div>
             </div>
@@ -146,7 +146,7 @@ export default function Profile() {
                 value={phone}
                 onChange={e => setPhone(e.target.value)}
                 placeholder="+234 800 000 0000"
-                className="w-full bg-[#252525] border border-white/10 text-white placeholder-gray-500 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-[#e63946] transition-colors"
+                className="w-full bg-[#252525] border border-white/10 text-white placeholder-gray-500 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-[#e63946] transition-colors dark:bg-gray-200"
               />
             </div>
             <div>
@@ -156,7 +156,7 @@ export default function Profile() {
                 onChange={e => setAddress(e.target.value)}
                 placeholder="Enter your address..."
                 rows={3}
-                className="w-full bg-[#252525] border border-white/10 text-white placeholder-gray-500 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-[#e63946] transition-colors resize-none"
+                className="w-full bg-[#252525] border border-white/10 text-white placeholder-gray-500 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-[#e63946] transition-colors resize-none dark:bg-gray-200"
               />
             </div>
             <button
@@ -171,8 +171,8 @@ export default function Profile() {
         </div>
 
         {/* Change password */}
-        <div className="bg-[#1a1a1a] rounded-2xl p-6 border border-white/5">
-          <h2 className="text-white font-bold text-base mb-5">Change Password</h2>
+        <div className="bg-[#1a1a1a] rounded-2xl p-6 border border-white/5 dark:bg-gray-400">
+          <h2 className="text-white font-bold text-base mb-5 dark:text-black">Change Password</h2>
 
           {pwError && (
             <div className="bg-red-500/10 border border-red-500/30 text-red-400 text-sm px-4 py-3 rounded-lg mb-4">
@@ -194,7 +194,7 @@ export default function Profile() {
                   value={currentPassword}
                   onChange={e => setCurrentPassword(e.target.value)}
                   placeholder="••••••••"
-                  className="w-full bg-[#252525] border border-white/10 text-white placeholder-gray-500 rounded-xl px-4 py-3 pr-11 text-sm focus:outline-none focus:border-[#e63946] transition-colors"
+                  className="w-full bg-[#252525] border border-white/10 text-white placeholder-gray-500 rounded-xl px-4 py-3 pr-11 text-sm focus:outline-none focus:border-[#e63946] transition-colors dark:bg-gray-200"
                 />
                 <button type="button" onClick={() => setShowCurrentPw(v => !v)} className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 hover:text-gray-300">
                   {showCurrentPw ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
@@ -209,7 +209,7 @@ export default function Profile() {
                   value={newPassword}
                   onChange={e => setNewPassword(e.target.value)}
                   placeholder="Min. 6 characters"
-                  className="w-full bg-[#252525] border border-white/10 text-white placeholder-gray-500 rounded-xl px-4 py-3 pr-11 text-sm focus:outline-none focus:border-[#e63946] transition-colors"
+                  className="w-full bg-[#252525] border border-white/10 text-white placeholder-gray-500 rounded-xl px-4 py-3 pr-11 text-sm focus:outline-none focus:border-[#e63946] transition-colors dark:bg-gray-200"
                 />
                 <button type="button" onClick={() => setShowNewPw(v => !v)} className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 hover:text-gray-300">
                   {showNewPw ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
@@ -224,7 +224,7 @@ export default function Profile() {
                   value={confirmNewPassword}
                   onChange={e => setConfirmNewPassword(e.target.value)}
                   placeholder="Repeat new password"
-                  className="w-full bg-[#252525] border border-white/10 text-white placeholder-gray-500 rounded-xl px-4 py-3 pr-11 text-sm focus:outline-none focus:border-[#e63946] transition-colors"
+                  className="w-full bg-[#252525] border border-white/10 text-white placeholder-gray-500 rounded-xl px-4 py-3 pr-11 text-sm focus:outline-none focus:border-[#e63946] transition-colors dark:bg-gray-200"
                 />
                 <button type="button" onClick={() => setShowConfirmPw(v => !v)} className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 hover:text-gray-300">
                   {showConfirmPw ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
