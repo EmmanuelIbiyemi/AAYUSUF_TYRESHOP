@@ -1,10 +1,10 @@
 import { useState, FormEvent } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { Eye, EyeOff, Loader2 } from 'lucide-react';
-import { useAuth } from '../context/AuthContext';
+// import { useAuth } from '../context/AuthContext';
 
 export default function Signup() {
-  const { signUp, signInWithGoogle } = useAuth();
+  // const { signUp, signInWithGoogle } = useAuth();
   const navigate = useNavigate();
   const [fullName, setFullName] = useState('');
   const [email, setEmail] = useState('');
@@ -13,7 +13,7 @@ export default function Signup() {
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirm, setShowConfirm] = useState(false);
   const [loading, setLoading] = useState(false);
-  const [googleLoading, setGoogleLoading] = useState(false);
+  // const [googleLoading, setGoogleLoading] = useState(false);
   const [error, setError] = useState('');
   const [success, setSuccess] = useState('');
 
@@ -42,14 +42,14 @@ export default function Signup() {
     }
   };
 
-  const handleGoogle = async () => {
-    setGoogleLoading(true);
-    const { error } = await signInWithGoogle();
-    if (error) {
-      setError(error.message);
-      setGoogleLoading(false);
-    }
-  };
+  // const handleGoogle = async () => {
+  //   setGoogleLoading(true);
+  //   const { error } = await signInWithGoogle();
+  //   if (error) {
+  //     setError(error.message);
+  //     setGoogleLoading(false);
+  //   }
+  // };
 
   return (
     <div className="min-h-screen bg-[#0f0f0f] flex items-center justify-center px-4 py-10">
@@ -86,7 +86,7 @@ export default function Signup() {
           )}
 
           {/* Google OAuth */}
-          <button
+          {/* <button
             onClick={handleGoogle}
             disabled={googleLoading}
             className="w-full flex items-center justify-center gap-3 bg-white text-gray-800 font-medium py-3 px-4 rounded-xl hover:bg-gray-100 transition-all duration-200 disabled:opacity-60"
@@ -102,7 +102,7 @@ export default function Signup() {
               </svg>
             )}
             Continue with Google
-          </button>
+          </button> */}
 
           <div className="flex items-center gap-3 my-5">
             <div className="flex-1 h-px bg-white/10" />

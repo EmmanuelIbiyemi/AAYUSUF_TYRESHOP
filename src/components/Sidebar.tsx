@@ -9,17 +9,18 @@ interface SidebarProps {
 }
 
 export default function Sidebar({ isOpen, onClose }: SidebarProps) {
-  const { user, signOut } = useAuth();
+  const { user } = useAuth();
   const { openCart, totalItems } = useCart();
   const navigate = useNavigate();
   const location = useLocation();
 
   const handleSignOut = async () => {
-    await signOut();
+    // await signOut();
     navigate('/login');
   };
 
-  const displayName = user?.user_metadata?.full_name || user?.email?.split('@')[0] || 'User';
+  // const displayName = user?.user_metadata?.full_name || user?.email?.split('@')[0] || 'User';
+  const displayName = 'User';
   const initials = displayName
     .split(' ')
     .map((n: string) => n[0])
@@ -74,7 +75,7 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
             </div>
             <div className="min-w-0">
               <p className="text-white text-sm font-semibold truncate dark:text-black">{displayName}</p>
-              <p className="text-gray-500 text-xs truncate dark:text-gray-600">{user?.email}</p>
+              <p className="text-gray-500 text-xs truncate dark:text-gray-600">{"email@gmail.com"}</p>
             </div>
           </div>
         </div>
